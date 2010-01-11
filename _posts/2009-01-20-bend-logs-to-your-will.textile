@@ -1,52 +1,52 @@
 ---
-published: false
+published: true
 layout: post
-title: bend logs to your will
+title: buig logs naar je wil
 category: advanced
 ---
 
-@git log@ is an extremely powerful command with plenty of options that are helpful for figuring out what work has been done on your repositories and just who's done it. This post enumerates a few of the more useful options. Most of these tips were farmed from Scott Chacon's "gitcast on git log":http://gitcasts.com/posts/git-log and R. Tyler Ballance's "git protip series":http://unethicalblogger.com/posts/2008/12/git_protip_learning_your_history_git_log.
+@git log@ is een extreem krachtig commando met veel opties die je helpen om uit te vinden wat voor werk er is verricht op je @repository@ en wie het heeft verricht. Dit bericht somt een aantal van de meest nuttige opties op. Het grootste deel van deze tips zijn verkregen uit Scott Chacon's "gitcast on git log":http://gitcasts.com/posts/git-log en R. Tyler Ballance's "git protip series":http://unethicalblogger.com/posts/2008/12/git_protip_learning_your_history_git_log.
 
 @git log -<n>@
 
-Show the log for @n@ number of commits. For example, @git log -2@ for the last two commits.
+Laat het @log@ zien voor @n@ @commits@. Bijvoorbeeld, @git log -2@ toont de laatste twee @commits@.
 
 @git log --stat@
 
-Show the log with output for files changed and insertions/deletions. Basically the normal output of @git commit@ appended to each message.
+Laat het @log@ zien met output voor gewijzigde bestanden en toevoegingen/verwijderingen. In essentie de normale output van @git commit@ toegevoegd aan ieder bericht.
 
 @git log --name-status@
 
-Attaches SVN-like add/modified/deleted for each commit. Very basic but still gives a decent idea about what's changed.
+Voegt een SVN-achtig @add/modified/deleted@ toe voor iedere @commit@. Erg basaal maar geeft toch een redelijk beeld van wat er is gewijzigd.
 
 @git log --pretty=oneline@
 
-Compresses each commit to its SHA1 and message on one line. Pipe to @wc -l@ if you want to count commits!
+Perst iedere @commit@ samen tot zijn SHA1 en de boodschap op een regel. Pijp naar @wc -l@ als je het aantal @commits@ wilt tellen!
 
 @git log origin..HEAD@
 
-See if there's any commits that have not been pushed to your @origin@ remote. (Thanks for the tip, Ryan Bates!)
+Bekijk of er @commits@ zijn die nog niet naar je @origin@ remote zijn @ge-push-d@. (Bedankt voor de tip, Ryan Bates!)
 
 @git log <file>@
 
-See all commits that affected only the file given.
+Bekijk alle @commits@ die uitsluitend het gegeven bestand hebben aangeraakt.
 
 @git log --no-merges --author=dave@
 
-See all commits that dave has worked on, and ignore any merge commits to reduce noise.
+Bekijk alle @commits@ waar Dave aan heeft gewerkt, en negeer daarbij iedere @merge commit@ om de hoeveelheid ruis te reduceren.
 
 @git log --since="1 week ago"@
 
-View commits that have happened since last week. Could easily be replaced with @yesterday@, @1 year ago@, @3 months ago@, @1/20/09@ and so on. There's also other time based options: @--after@, @--until@, and @--before@ if you want to get creative.
+Bekijk de @commits@ gedaan sinds vorige week. Kan makkelijk vervangen worden met @yesterday@, @1 year ago@, @3 months ago@, @1/20/09@ en zo verder. Er zijn ook andere tijd gebaseerde opties: @--after@, @--until@, en @--before@ als je creatief wilt worden.
 
 @git log --grep='^Bump'@
 
-Search through commit messages to find ones that start with the string "Bump". This will take in any regular expression, so if you're looking for that one commit you did and all you can remember is a part of the message, @--grep@ will find it.
+Zoek door je @commit@ berichten om die berichten te vinden die beginnen met de string "Bump". Dit kan een willekeurige reguliere expressie zijn, dus wanneer je zoekt naar een @commit@ die je hebt gedaan en alles wat je je kunt herinneren is een deel van het bericht, @--grep@ zal het vinden.
 
 @git --no-pager log@
 
-Don't want to use @less@ to view your commits? This option will just give you the straight output if you need it.
+Wil je geen @less@ gebruiken om je @commits@ te bekijken? Deze optie zal je de ruwe output geven als je dat nodig hebt. 
 
-Of course, check out the "manpage":http://www.kernel.org/pub/software/scm/git/docs/git-log.html to see all of the options available to you. If you have a nice tip that was missed and you'd like to share, let us know in the comments and I'll update the post.
+Natuurlijk, bekijk de "manpage":http://www.kernel.org/pub/software/scm/git/docs/git-log.html om te zien wat de opties zijn die je tot je beschikking hebt. Als je een goede tip hebt die over het hoofd is gezien en je wilt delen, laat het ons weten in het commentaar en ik zal dit bericht aanpassen.
 
 
